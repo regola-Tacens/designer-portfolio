@@ -143,11 +143,9 @@ export function NavBar() {
           <Collapse in={worksOpen} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
               {works.map((text) => (
-                // <ListItem button>
                 <ListItem button key={text} className={classes.nested}>
                   <ListItemText primary={text} />
                 </ListItem>
-                // </ListItem>
               ))}
             </List>
           </Collapse>
@@ -302,7 +300,7 @@ export function NavBar() {
           <Route path="/Techs">
             <Techs />
           </Route>
-          <Route path="/Home">
+          <Route path="/">
             <Home />
           </Route>
           <Route path="/Contact">

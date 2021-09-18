@@ -10,21 +10,17 @@ import Loose6 from "../images/Loose/Loose6.jpg";
 const useStyles = makeStyles((theme) => ({
   mainTech: {
     flex: 1,
-    // direction :'column',
     backgroundColor: "#FC4445",
     boxSizing: "content-box",
-    // height : '100vh'
   },
   titleTech: {
     display: "flex",
     padding: theme.spacing(10, 10),
-    // marginTop : '10vh',
     fontSize: "10vh",
     color: "#111",
   },
   introText: {
     display: "flex",
-    // backgroundColor : '#0b0c10',
     padding: theme.spacing(10, 10),
     textAlign: "left",
     justifyContent: "center",
