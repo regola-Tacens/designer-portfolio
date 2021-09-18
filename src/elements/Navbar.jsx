@@ -26,7 +26,7 @@ import Collapse from "@material-ui/core/Collapse";
 import FingerprintIcon from "@material-ui/icons/Fingerprint";
 import KeyboardIcon from "@material-ui/icons/Keyboard";
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
 import { Link as RouterLink } from "react-router-dom";
 import Techs from "./Techs";
 import Home from "./Home";
@@ -103,7 +103,7 @@ export function NavBar() {
     "Girl",
     "Abandonned Playgrounds",
     "Volcom Industries",
-    "Slowburn",
+    "Slowburnnnn",
     "Constant Vacations",
   ];
   const [worksOpen, setWorksOpen] = useState(false);
@@ -202,6 +202,10 @@ export function NavBar() {
         </Menu>
 
         <Switch>
+          <Redirect exact from="/" to="/Home" />
+          <Route path="/Home">
+            <Home />
+          </Route>
           <Route path="/Disciples">
             <Disciples />
           </Route>
@@ -300,7 +304,7 @@ export function NavBar() {
           <Route path="/Techs">
             <Techs />
           </Route>
-          <Route path="/">
+          <Route path="/Home">
             <Home />
           </Route>
           <Route path="/Contact">
