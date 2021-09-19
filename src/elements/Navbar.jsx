@@ -205,10 +205,7 @@ export function NavBar() {
         </Menu>
 
         <Switch>
-          <Redirect exact from="/" to="/Home" />
-          <Route path="/Home">
-            <Home />
-          </Route>
+
           <Route path="/Disciples">
             <Disciples />
           </Route>
@@ -235,6 +232,9 @@ export function NavBar() {
           </Route>
           <Route path="/Constant">
             <Constant />
+          </Route>
+          <Route  exact path="/">
+            <Home />
           </Route>
         </Switch>
       </>
