@@ -26,7 +26,7 @@ import Collapse from "@material-ui/core/Collapse";
 import FingerprintIcon from "@material-ui/icons/Fingerprint";
 import KeyboardIcon from "@material-ui/icons/Keyboard";
 
-import { BrowserRouter as Router, Route, Redirect, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import { Link as RouterLink } from "react-router-dom";
 import Techs from "./Techs";
 import Home from "./Home";
@@ -40,6 +40,7 @@ import Volcom from "./Volcom";
 import Slowburn from "./Slowburn";
 import Constant from "./Constant";
 import Contact from "./Contact";
+import Cv from "./Cv";
 
 const useStyles = makeStyles((theme) => ({
   bar: {
@@ -160,7 +161,7 @@ export function NavBar() {
             </ListItemIcon>
             <ListItemText primary="TECH" />
           </ListItem>
-          <ListItem button key="RESUME/CV">
+          <ListItem button key="RESUME/CV" component={Link} to="/Cv">
             <ListItemIcon>
               <LibraryBooksIcon />
             </ListItemIcon>
@@ -172,7 +173,7 @@ export function NavBar() {
             </ListItemIcon>
             <ListItemText primary="BIO" />
           </ListItem>
-          <ListItem button key="CONTACT">
+          <ListItem button key="CONTACT" component={Link} to="/Contact">
             <ListItemIcon>
               <MailIcon />
             </ListItemIcon>
@@ -233,6 +234,9 @@ export function NavBar() {
           <Route path="/Constant">
             <Constant />
           </Route>
+          <Route path="/cv">
+            <Cv />
+          </Route>
           <Route  exact path="/">
             <Home />
           </Route>
@@ -280,14 +284,19 @@ export function NavBar() {
               >
                 <b>T E C H S</b>
               </Button>
-              <Button color="inherit" className={classes.navIconHide}>
+              <Button 
+                color="inherit" 
+                className={classes.navIconHide}
+                component={RouterLink}
+                to="/cv"
+              >
                 <b>R E S U M E / CV</b>
               </Button>
               <Button
                 color="inherit"
                 className={classes.navIconHide}
                 component={RouterLink}
-                to="/Home"
+                to="/"
               >
                 <b>H O M E</b>
               </Button>
