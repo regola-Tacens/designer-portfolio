@@ -26,7 +26,7 @@ import Collapse from "@material-ui/core/Collapse";
 import FingerprintIcon from "@material-ui/icons/Fingerprint";
 import KeyboardIcon from "@material-ui/icons/Keyboard";
 
-import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect, Link, Switch } from "react-router-dom";
 import { Link as RouterLink } from "react-router-dom";
 import Techs from "./Techs";
 import Home from "./Home";
@@ -103,7 +103,7 @@ export function NavBar() {
     "Girl",
     "Abandonned Playgrounds",
     "Volcom Industries",
-    "Slowburnnnn",
+    "Slowburn",
     "Constant Vacations",
   ];
   const [worksOpen, setWorksOpen] = useState(false);
@@ -128,7 +128,6 @@ export function NavBar() {
       <div
         className={classes.list}
         role="presentation"
-        // onClick={toggleDrawer()}
         onKeyDown={toggleDrawer()}
       >
         <List>
@@ -141,13 +140,17 @@ export function NavBar() {
           </ListItem>
 
           <Collapse in={worksOpen} timeout="auto" unmountOnExit>
+            
             <List component="div" disablePadding>
               {works.map((text) => (
-                <ListItem button key={text} className={classes.nested}>
+              
+                <ListItem button key={text} className={classes.nested}  component={Link} to={`/${text.split(' ')[0]}`}>
                   <ListItemText primary={text} />
                 </ListItem>
+                
               ))}
             </List>
+              
           </Collapse>
 
           <Divider />
